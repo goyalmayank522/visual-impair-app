@@ -1,8 +1,6 @@
 from flask import Flask, render_template, url_for, request
 from gtts import gTTS
-import os
-app=Flask(__name__, static_folder='static', template_folder='templates')
-import os
+app = Flask(__name__, static_folder='static', template_folder='templates')
 
 @app.route("/")
 def home():
