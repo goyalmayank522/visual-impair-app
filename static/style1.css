@@ -1,0 +1,35 @@
+body{
+    /* background-color: #f0e9e9; */
+    background-color: #ccc1c0;
+}
+h1 {
+    border: 2px #eee solid;
+    color: black;
+    text-align: center;
+    padding: 10px;
+    background-color:#FFC0CB;
+    box-shadow: rgb(38, 57, 77) 0px 15px 25px -10px;
+    text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #FF2D95 0px 0px 20px, #FF2D95 0px 0px 30px, #FF2D95 0px 0px 40px, #FF2D95 0px 0px 50px, #FF2D95 0px 0px 75px;
+}
+h3{
+    left: 15%;
+    right: 15%;
+    text-align: center;
+    top: 30%;
+    position: absolute;
+    color: black;
+    text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #FF2D95 0px 0px 20px, #FF2D95 0px 0px 30px, #FF2D95 0px 0px 40px, #FF2D95 0px 0px 50px, #FF2D95 0px 0px 75px;
+}
+p {
+    position: absolute;
+    color: black;
+    top: 50%;
+    left:35%;
+    padding: 30px; 
+    /* background-color:#2CA194; */
+    background-color:#FFC0CB;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+.submit:hover{
+    background-color:green;
+}

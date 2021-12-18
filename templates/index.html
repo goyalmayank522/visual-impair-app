@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'style1.css') }}">
+    <title>VIP - The Assistant</title>
+</head>
+<body>
+   <h1>Assistant for Visually Impaired Peoples</h1>
+   <h3> We aim at building a deep learning architecture that generates descriptions of images and reads out these descriptions for blind people. To create a description about Image, upload that image here...</h3>
+    <form action="{{url_for('results')}}", method="POSt">
+        <p >
+            <input type="file" id="myFile" name="filename">
+            <br>
+            <input class="submit" style="margin-left: 80%" type="submit">
+        </p>
+    </form>
+</body>
+</html>

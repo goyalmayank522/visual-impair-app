@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'style2.css') }}">
+    <title>VIP - The Assistant</title>
+</head>
+<body>
+   <h1>The description corresponding to the image is...</h1>
+    <img src="{{ input_image }}" alt="Image not found!!!">
+    <p id="descp"><b>Generated description is: </b>{{ descp }}</p>
+    <audio id="sound1" src="{{sound}}" preload="auto"></audio>
+
+    <audio id="testAudio" hidden src="{{sound}}"></audio>
+    <button id="playAudio">Play the Caption</button>
+    
+    <script type="text/javascript">
+    document.getElementById("playAudio").addEventListener("click", function(){
+        var audio = document.getElementById('testAudio');
+      if(this.className == 'is-playing'){
+        this.className = "";
+        this.innerHTML = "Play the Caption"
+        audio.pause();
+      }else{
+        this.className = "is-playing";
+        this.innerHTML = "Pause it";
+        audio.play();
+      }
+    });
+    </script>
+</body>
+</html>
