@@ -7,16 +7,21 @@
 </head>
 <body>
    <h1>The description corresponding to the image is...</h1>
-    <img src="{{ input_image }}" alt="Image not found!!!">
+    <img src="{{input_image}}" alt="Image not found!!!">
     <p id="descp"><b>Generated description is: </b>{{ descp }}</p>
-    <audio id="sound1" src="{{sound}}" preload="auto"></audio>
 
-    <audio id="testAudio" hidden src="{{sound}}"></audio>
-    <button id="playAudio">Play the Caption</button>
-    
+    <audio id="my_audio" hidden src="{{sound}}"></audio>
     <script type="text/javascript">
+      setTimeout(function(){
+        document.getElementById("my_audio").play();
+      }, 2000)
+    </script>
+
+    <!-- <audio controls="controls" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 3000)" hidden src="{{sound}}"></audio> -->
+    <!-- <button id="playAudio" style="box-shadow: rgb(38, 57, 77) 0px 15px 25px -10px">Play the Caption</button> -->
+    <!-- <script type="text/javascript">
     document.getElementById("playAudio").addEventListener("click", function(){
-        var audio = document.getElementById('testAudio');
+      var audio = document.getElementById('testAudio');
       if(this.className == 'is-playing'){
         this.className = "";
         this.innerHTML = "Play the Caption"
@@ -27,6 +32,6 @@
         audio.play();
       }
     });
-    </script>
+    </script> -->
 </body>
 </html>

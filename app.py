@@ -6,15 +6,20 @@ app = Flask(__name__, static_folder='static', template_folder='templates')
 def home():
     return render_template('index.html')
 
-@app.route('/results', methods=['POST'])
+@app.route('/results', methods=['GET', 'POST'])
 def results():
     if request.method=='POST':
-        gen_caption = "Tree on Earth"
-        tts = gTTS(text=gen_caption, lang='en',tld="com")
-        tts.save('static/gen_sound.mp3')
-        path = 'static/gen_sound.mp3'
-        return render_template('results.html',  input_image="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg", descp=gen_caption, sound=path)
+        #getting the image and saving it...
+        f = request.files['file']
+        f.save("static/img")
 
+        #generating the caption/description according to input image...
+        gen_caption = "A beautiful white colored house is sorrounded by lovely mountains."
+
+        #converting text to speech and saving it...
+        tts = gTTS(text= "The description for the input image is : " + gen_caption + "Thank You", lang='en', tld="com")
+        tts.save('static/gen_sound.mp3')
+        return render_template('results.html', input_image= 'static/img', descp=gen_caption, sound='static/gen_sound.mp3')
 
 if __name__ == "__main__":
   app.run()

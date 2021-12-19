@@ -8,9 +8,9 @@
 <body>
    <h1>Assistant for Visually Impaired Peoples</h1>
    <h3> We aim at building a deep learning architecture that generates descriptions of images and reads out these descriptions for blind people. To create a description about Image, upload that image here...</h3>
-    <form action="{{url_for('results')}}", method="POSt">
+    <form action="{{url_for('results')}}", method = "POST" enctype="multipart/form-data">
         <p >
-            <input type="file" id="myFile" name="filename">
+            <input type="file" id="file" name="file" required="True">
             <br>
             <input class="submit" style="margin-left: 80%" type="submit">
         </p>
