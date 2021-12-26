@@ -14,8 +14,9 @@ from keras.models import Model
 # from keras.callbacks import ModelCheckpoint
 def extract_features(filename):
     model = VGG16()
-    model.layers.pop()
-    model = Model(inputs=model.inputs, outputs=model.layers[-1].output)
+    # model.layers.pop()
+    model = Model(inputs=model.inputs, outputs=model.layers[-2].output)
+    # model._get_distribution_strategy = lambda: None
     image = load_img(filename, target_size=(224, 224))
     image = img_to_array(image)
     image = image.reshape((1, image.shape[0], image.shape[1], image.shape[2]))

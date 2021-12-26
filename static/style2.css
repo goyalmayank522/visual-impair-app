@@ -1,15 +1,20 @@
 body{
     /* background-color: #f0e9e9; */
-    background-color: #ccc1c0;
+    background-color: #d2fdff;
 }
 h1 {
-    border: 2px #eee solid;
-    color: black;
+    /* border: 2px #eee solid; */
+    color: #edf5e1;
     text-align: center;
-    padding: 10px;
-    background-color:#FFC0CB;
+    padding: 20px;
+    background-color:#05386B;
     box-shadow: rgb(38, 57, 77) 0px 15px 25px -10px;
-    text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #FF2D95 0px 0px 20px, #FF2D95 0px 0px 30px, #FF2D95 0px 0px 40px, #FF2D95 0px 0px 50px, #FF2D95 0px 0px 75px;
+    border: 2px #eee;
+    font-family: 'Josefin Sans';
+    left: 0px;
+    right: 0px;
+    border-radius: 10px;
+    /* text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, rgb(75, 205, 245) 0px 0px 20px, rgb(75, 205, 245) 0px 0px 30px, rgb(75, 205, 245) 0px 0px 40px, rgb(75, 205, 245) 0px 0px 50px, rgb(75, 205, 245) 0px 0px 75px; */
 }
 img{
     /* border-radius: 8px; */
@@ -25,16 +30,18 @@ img{
     box-shadow: rgb(38, 57, 77) 0px 15px 25px -10px;
 }
 #descp{
-    border: 2px #eee solid;
-    color: black;
+    /* border: 2px #eee solid; */
+    color: #edf5e1;
     text-align: center;
-    padding: 10px;  
-    background-color:white;
+    padding: 15px;  
+    background-color: #05386B;
     margin-left: 55%;
     margin-right: 10%;
     margin-top: 10%;
     box-shadow: rgb(38, 57, 77) 0px 15px 25px -10px;
-    font-size: 20px;
+    font-size: 25px;
+    font-family: 'Josefin Sans';
+    border-radius: 10px;
 }
 button{
     margin-left: 26%;

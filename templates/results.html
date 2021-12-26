@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{{ url_for('static', filename= 'style2.css') }}">
+    <link href='https://fonts.googleapis.com/css?family=Josefin Sans' rel='stylesheet'>
     <title>VIP - The Assistant</title>
 </head>
 <body>
-   <h1>The description corresponding to the image is...</h1>
+   <h1>SCENE NARRATOR - THE ASSISTANT</h1>
     <img src="{{input_image}}" alt="Image not found!!!">
-    <p id="descp"><b>Generated description is: </b>{{ descp }}</p>
+    <p id="descp"><b>Description: </b>{{ descp }}</p>
 
     <audio id="my_audio" hidden src="{{sound}}"></audio>
     <script type="text/javascript">
       setTimeout(function(){
         document.getElementById("my_audio").play();
-      }, 2000)
+      }, 1000)
     </script>
 
     <!-- <audio controls="controls" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 3000)" hidden src="{{sound}}"></audio> -->

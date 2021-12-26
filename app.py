@@ -2,7 +2,7 @@ from flask import Flask, render_template, url_for, request
 from gtts import gTTS
 from extra_functions import extract_features, generate_desc
 from pickle import load
-from keras.models import load_model
+from tensorflow.keras.models import load_model
 app = Flask(__name__, static_folder='static', template_folder='templates')
 
 @app.route("/")
@@ -16,15 +16,17 @@ def results():
         f = request.files['file']
         f.save("static/img")
         features = extract_features('static/img')
-        model = load_model('model_19.h5')
+        model = load_model('model_final22.h5')
         tokens = load(open('tokenizer.pkl','rb'))
         max_length = 34
         gen_caption = generate_desc(model, tokens, features, max_length)
+        gen_caption = gen_caption.split(' ', 1 )[1]
+        gen_caption = gen_caption.rsplit(' ', 1 )[0]
         #generating the caption/description according to input image...
         # gen_caption = "A beautiful white colored house is sorrounded by lovely mountains."
 
         #converting text to speech and saving it...
-        tts = gTTS(text= "The description for the input image is : " + gen_caption + "Thank You", lang='en', tld="com")
+        tts = gTTS(text= "The description for the input image is : " + gen_caption , lang='en', tld="com")
         tts.save('static/gen_sound.mp3')
         return render_template('results.html', input_image= 'static/img', descp=gen_caption, sound='static/gen_sound.mp3')
 
